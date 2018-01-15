@@ -1,5 +1,6 @@
 package com.controller;
 
+import com.google.gson.JsonParser;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,4 +24,5 @@ public class LoginController {
         String password = request.getParameter("password");
         return "success";
     }
+    JsonParser jsonParser = new JsonParser();
 }
