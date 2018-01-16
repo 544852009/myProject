@@ -10,7 +10,7 @@
     <mvc:default-servlet-handler/>
 
     <!-- 开启注解 -->
-    <mvc:annotation-driven></mvc:annotation-driven>
+    <mvc:annotation-driven/>
 
 
 

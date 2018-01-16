@@ -12,7 +12,7 @@
 </head>
 <body>
     <form action="/my/login" method="post" >
-        <input type="number" name="username"><br>
+        <input type="number" name="userName"><br>
         <input type="password" name="password"><br>
         <button type="submit">登录</button>
     </form>
