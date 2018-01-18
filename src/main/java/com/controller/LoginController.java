@@ -10,6 +10,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping(value = "/my", method = RequestMethod.GET)
@@ -33,4 +34,14 @@ public class LoginController extends BaseController{
         request.getSession().setAttribute("user",userinfo);
         return "success";
     }
+
+
+    @RequestMapping(value = "/logOut", method = RequestMethod.POST)
+    public String logOut( HttpServletRequest request, RedirectAttributes redirectAttributes, HttpServletResponse response, Model model) {
+        HttpSession httpSession = request.getSession();
+        httpSession.removeAttribute("user");
+        addMessage(redirectAttributes,"注销成功.");
+        return "redirect:/my/index";
+    }
+
 }

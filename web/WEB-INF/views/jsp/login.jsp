@@ -172,10 +172,7 @@
 <script>
     $(document).ready(function(){
             if($("#message").val()!=""){
-                layer.open({
-                    title: "温馨提示"
-                    ,content: $("#message").val()
-                });
+                layer.msg($("#message").val());
             }
     });
     $("#sub").click(function () {
