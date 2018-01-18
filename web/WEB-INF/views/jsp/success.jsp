@@ -17,6 +17,6 @@
     button{width: 20px;height: 10px;background-color: #1E9FFF;}
 </style>
 <body>
-    <span>恭喜登录成功!${a}</span>
+    <span>恭喜登录成功!${user.userName}</span>
 </body>
 </html>
