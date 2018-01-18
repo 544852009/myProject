@@ -1,3 +1,6 @@
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ include file="/WEB-INF/views/include/head.jsp"%>
+
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
@@ -10,11 +13,10 @@
 <head>
     <title>用户登录</title>
 </head>
+<style>
+    button{width: 20px;height: 10px;background-color: #1E9FFF;}
+</style>
 <body>
-    <form action="/my/login" method="post" >
-        <input type="number" name="userName"><br>
-        <input type="password" name="password"><br>
-        <button type="submit">登录</button>
-    </form>
+    <span>恭喜登录成功!${a}</span>
 </body>
 </html>
