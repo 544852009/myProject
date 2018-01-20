@@ -11,13 +11,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>用户登录</title>
+    <title>error</title>
 </head>
 <style>
     button{width: 20px;height: 10px;background-color: #1E9FFF;}
 </style>
 <body>
-    <span>恭喜登录成功!${user.userName}</span>
-    <span><a href="http://localhost:8085/my/logOut">点击注销</a></span>
+    <span>服务器出错啦.</span>
 </body>
 </html>

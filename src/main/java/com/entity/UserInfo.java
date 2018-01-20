@@ -1,14 +1,15 @@
 package com.entity;
 
+import org.hibernate.validator.constraints.Length;
+
 import javax.validation.constraints.NotNull;
 
 public class UserInfo {
 
     @NotNull(message = "用户名不能为空")
     private String userName;
-    @NotNull(message = "用户名不能为空")
+    @Length(min=0 ,max = 6,message = "密码必须是0-6")
     private String password;
-    @NotNull(message = "用户名不能为空")
     private String address;
 
     public String getUserName() {
