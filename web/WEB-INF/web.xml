@@ -58,12 +58,12 @@
     </filter-mapping>
 
     <!--服务器出错页面配置-->
-    <error-page>
-        <error-code>500</error-code>
-        <location>/WEB-INF/views/jsp/500.jsp</location>
-    </error-page>
-    <error-page>
-        <error-code>404</error-code>
-        <location>/WEB-INF/views/jsp/404.jsp</location>
-    </error-page>
+    <!--<error-page>-->
+        <!--<error-code>500</error-code>-->
+        <!--<location>/WEB-INF/views/jsp/500.jsp</location>-->
+    <!--</error-page>-->
+    <!--<error-page>-->
+        <!--<error-code>404</error-code>-->
+        <!--<location>/WEB-INF/views/jsp/404.jsp</location>-->
+    <!--</error-page>-->
 </web-app>

@@ -13,7 +13,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -26,7 +25,7 @@ public class LoginController extends BaseController{
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String printHello(@Valid UserInfo userinfo, BindingResult result , HttpServletRequest request, RedirectAttributes redirectAttributes, HttpServletResponse response, Model model) {
+    public String printHello(UserInfo userinfo, BindingResult result , HttpServletRequest request, RedirectAttributes redirectAttributes, HttpServletResponse response, Model model) {
 
         if(result.hasErrors()){
             System.out.println("2222");

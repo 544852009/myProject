@@ -1,42 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="ch-zh">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <script src="../static/js/jquery/jquery-1.7.2.min.js"></script>
+<script src="../static/js/jieconfig/config.js"></script>
+<script src="../static/layui/layui.js"></script>
+<script src="../static/js/template/template-web.js"></script>
 <body>
     <button>点击请求</button>
+    <div id="temp">212</div>
 </body>
+<script type="text/html" id="tpl">
+    {{each list}}
+        <span>{{$value.userName}}</span>
+        <span>{{$value.password}}</span>
+    {{/each}}
+</script>
+<!--<script type="text/javascript">-->
+    <!--//框架初始化-->
+    <!--qySoftInit("../js/");-->
+    <!--//apicloud 准备完成-->
+    <!--$(function(){-->
+
+        <!--layui.use(['layer'], initpage);-->
+    <!--});-->
+    <!--</script>-->
 <script>
     $("button").click(function(){
-        $.ajax({
-            url:'http://192.168.0.129:8084/web/test',
-            type:'POST', //GET
-            async:true,    //或false,是否异步
-            data:{
-                name:'yang',age:25
-            },
-            timeout:5000,    //超时时间
-            dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
-            beforeSend:function(xhr){
-                console.log(xhr)
-                console.log('发送前')
-            },
-            success:function(data,textStatus,jqXHR){
-                alert(JSON.stringify(data));
-                console.log(textStatus)
-                console.log(jqXHR)
-            },
-            error:function(xhr,textStatus){
-                console.log('错误')
-                console.log(xhr)
-                console.log(textStatus)
-            },
-            complete:function(){
-                console.log('结束')
-            }
-        })
+       myAjax("/web/test",{d:33},function (data) {
+           var html = template("tpl",data);
+           alert(html);
+           $("#temp").html(html);
+       })
     });
 </script>
 </html>

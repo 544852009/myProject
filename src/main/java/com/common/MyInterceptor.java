@@ -14,6 +14,8 @@ public class MyInterceptor implements HandlerInterceptor {
         String url = httpServletRequest.getRequestURI();
         //URL:login.jsp是公开的;这个demo是除了login.jsp是可以公开访问的，其它的URL都进行拦截控制
         if(url.indexOf("login")>=0||url.indexOf("index")>0||url.indexOf("wap")>0||url.indexOf("web")>0){
+            httpServletResponse.setCharacterEncoding("UTF-8");
+            httpServletResponse.setContentType("text/html;charset=UTF-8");
             return true;
         }
         if(httpServletRequest.getSession().getAttribute("user") != null){
