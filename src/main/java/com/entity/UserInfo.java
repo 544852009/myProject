@@ -1,12 +1,11 @@
 package com.entity;
 
-
-
 public class UserInfo {
-
     private String userName;
-
     private String password;
+
+    public UserInfo() {
+    }
 
     public UserInfo(String userName, String password) {
         this.userName = userName;
@@ -28,5 +27,4 @@ public class UserInfo {
     public void setPassword(String password) {
         this.password = password;
     }
-
 }

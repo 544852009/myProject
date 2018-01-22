@@ -4,8 +4,6 @@ import com.common.BaseController;
 import com.entity.UserInfo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -13,7 +11,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.util.List;
 
 @Controller
 @RequestMapping(value = "/my")
@@ -25,16 +22,7 @@ public class LoginController extends BaseController{
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String printHello(UserInfo userinfo, BindingResult result , HttpServletRequest request, RedirectAttributes redirectAttributes, HttpServletResponse response, Model model) {
-
-        if(result.hasErrors()){
-            System.out.println("2222");
-            List<FieldError> errorList  = result.getFieldErrors();
-            for (FieldError fieldError : errorList){
-                request.setAttribute(fieldError.getField(),fieldError.getDefaultMessage());
-            }
-            return "redirect:/my/index";
-        }
+    public String printHello(UserInfo userinfo, HttpServletRequest request, RedirectAttributes redirectAttributes, HttpServletResponse response, Model model) {
 
         if("".equals(userinfo.getUserName())||userinfo.getUserName()==null){
             addMessage(redirectAttributes,"用户名不能为空");
