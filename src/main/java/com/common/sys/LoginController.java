@@ -1,13 +1,15 @@
-package com.controller;
+package com.common.sys;
 
 import com.common.BaseController;
-import com.entity.UserInfo;
+import com.modules.user.dao.UserinfoMapper;
+import com.modules.user.entity.Userinfo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -16,13 +18,17 @@ import javax.servlet.http.HttpSession;
 @RequestMapping(value = "/my")
 public class LoginController extends BaseController{
 
+    @Resource
+    private UserinfoMapper userinfoMapper ;
+
     @RequestMapping(value = "/index")
+
     public String login() {
         return "login";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String printHello(UserInfo userinfo, HttpServletRequest request, RedirectAttributes redirectAttributes, HttpServletResponse response, Model model) {
+    public String printHello(Userinfo userinfo, HttpServletRequest request, RedirectAttributes redirectAttributes, HttpServletResponse response, Model model) {
 
         if("".equals(userinfo.getUserName())||userinfo.getUserName()==null){
             addMessage(redirectAttributes,"用户名不能为空");
@@ -32,6 +38,7 @@ public class LoginController extends BaseController{
             addMessage(redirectAttributes,"密码不能为空");
             return "redirect:/my/index";
         }
+        userinfoMapper.insert(userinfo);
         request.getSession().setAttribute("user",userinfo);
         return "success";
     }
