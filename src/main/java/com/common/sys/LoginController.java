@@ -1,7 +1,6 @@
 package com.common.sys;
 
 import com.common.BaseController;
-import com.modules.user.dao.UserinfoMapper;
 import com.modules.user.entity.Userinfo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -17,10 +15,6 @@ import javax.servlet.http.HttpSession;
 @Controller
 @RequestMapping(value = "/my")
 public class LoginController extends BaseController{
-
-    @Resource
-    private UserinfoMapper userinfoMapper ;
-
     @RequestMapping(value = "/index")
     public String login(HttpServletRequest request ,HttpServletResponse response ,Model model) {
         request.setAttribute("language",request.getParameter("language"));
@@ -58,5 +52,25 @@ public class LoginController extends BaseController{
         addMessage(redirectAttributes,"注销成功.");
         return "redirect:/my/index";
     }
+
+//    @RequestMapping(value = "language", method = RequestMethod.GET)
+//    public String language(HttpServletRequest request, HttpServletResponse response) {
+//        String langType = request.getParameter("type");
+//        if(langType==null||langType.equals("")){
+//            return "forward:index";
+//        }else{
+//            if (langType.equals("zh_CN")) {
+//                Locale locale1 = new Locale("zh", "CN");
+//                request.getSession().setAttribute(SessionLocaleResolver.LOCALE_SESSION_ATTRIBUTE_NAME, locale1);
+//            } else if (langType.equals("en_US")) {
+//                Locale locale1 = new Locale("en", "US");
+//                request.getSession().setAttribute(SessionLocaleResolver.LOCALE_SESSION_ATTRIBUTE_NAME, locale1);
+//            }else {
+//                request.getSession().setAttribute(SessionLocaleResolver.LOCALE_SESSION_ATTRIBUTE_NAME, LocaleContextHolder.getLocale());
+//            }
+//        }
+//
+//        return "forward:index";
+//    }
 
 }
