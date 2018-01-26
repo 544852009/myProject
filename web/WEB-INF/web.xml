@@ -38,6 +38,8 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
+
+
     <!--拦截转换编码-->
     <filter>
         <filter-name>encodingFilter</filter-name>

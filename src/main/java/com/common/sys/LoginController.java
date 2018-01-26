@@ -22,8 +22,8 @@ public class LoginController extends BaseController{
     private UserinfoMapper userinfoMapper ;
 
     @RequestMapping(value = "/index")
-
-    public String login() {
+    public String login(HttpServletRequest request ,HttpServletResponse response ,Model model) {
+        request.setAttribute("language",request.getParameter("language"));
         return "login";
     }
 
@@ -38,13 +38,20 @@ public class LoginController extends BaseController{
             addMessage(redirectAttributes,"密码不能为空");
             return "redirect:/my/index";
         }
-        userinfoMapper.insert(userinfo);
+
+        model.addAttribute("user",new Userinfo("2","3"));
+
         request.getSession().setAttribute("user",userinfo);
         return "success";
     }
 
+    @RequestMapping(value = "register",method = RequestMethod.GET)
+    public String register(HttpServletRequest request ,HttpServletResponse response ,Model model){
+        return "register";
+    }
 
-    @RequestMapping(value = "/logOut")
+
+    @RequestMapping(value = "logOut")
     public String logOut( HttpServletRequest request, RedirectAttributes redirectAttributes, HttpServletResponse response, Model model) {
         HttpSession httpSession = request.getSession();
         httpSession.removeAttribute("user");

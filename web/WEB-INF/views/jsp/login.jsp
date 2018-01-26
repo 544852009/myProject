@@ -1,5 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ include file="/WEB-INF/views/include/head.jsp"%>
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
@@ -11,7 +13,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>用户登录</title>
+    <title><spring:message code="title"/></title>
 
     <style type="text/css">
         *{
@@ -142,20 +144,25 @@
             line-height: 18px;
             text-decoration: none;
         }
+        .tab{
+            size: 20px;
+            color: white;
+            font-size: 15px;
+        }
     </style>
 </head>
 <body>
-
+&nbsp;&nbsp;&nbsp;<a href="/my/index?lang=zh_CN" class="tab">中文</a>/<a href="/my/index?lang=en_US" class="tab">ENGLISH</a>
 <div class="logo_box">
-    <h3>欢迎您</h3>
+    <h3><spring:message code="welcome"/> </h3>
     <form id="form1" action="/my/login" name="f" method="post">
         <div class="input_outer">
             <span class="u_user"></span>
-            <input name="userName" class="text" placeholder="输入ID或用户名登录" style="color: #FFFFFF !important" type="text">
+            <input name="userName" class="text" placeholder="<spring:message code="username"/>" style="color: #FFFFFF !important" type="text">
         </div>
         <div class="input_outer">
             <span class="us_uer"></span>
-            <input name="password" class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;"  placeholder="请输入密码" type="password">
+            <input name="password" class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;"  placeholder="<spring:message code="password"/>" type="password">
         </div>
         <input id="message" type="hidden" value="${message}">
         <div class="mb2"><a class="act-but submit" id="sub" style="color: #FFFFFF;cursor: pointer">登录</a></div>
@@ -165,7 +172,7 @@
 
 
     <div class="sas">
-        <a href="#">还没注册账号！</a>
+        <a href="/my/register">还没注册账号！</a>
     </div>
 
 </div>

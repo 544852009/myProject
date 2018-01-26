@@ -1,6 +1,7 @@
 package com.modules.user.dao;
 
-import com.modules.user.entity.*;
+import com.modules.user.entity.Userinfo;
+
 @MyBatisDao
 public interface UserinfoMapper {
     int deleteByPrimaryKey(Integer id);
