@@ -151,7 +151,7 @@
     </style>
 </head>
 <body>
-&nbsp;&nbsp;&nbsp;<a href="/my/index?lang=zh_CN" class="tab">中文</a>/<a href="/my/index?lang=en_US" class="tab">ENGLISH</a>
+&nbsp;&nbsp;&nbsp;<a href="/my/language?lang=zh_CN" class="tab">中文</a>/<a href="/my/language?lang=en_US" class="tab">ENGLISH</a>
 <div class="logo_box">
     <h3><spring:message code="welcome"/> </h3>
     <form id="form1" action="/my/login" name="f" method="post">
