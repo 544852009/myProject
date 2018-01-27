@@ -18,6 +18,6 @@
 </style>
 <body>
     <span>恭喜登录成功!${user.userName}</span>
-    <span><a href="http://localhost:8085/my/logOut">点击注销</a></span>
+    <span><a href="/my/logOut">点击注销</a></span>
 </body>
 </html>
