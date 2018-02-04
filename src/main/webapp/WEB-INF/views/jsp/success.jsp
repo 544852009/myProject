@@ -17,7 +17,7 @@
     button{width: 20px;height: 10px;background-color: #1E9FFF;}
 </style>
 <body>
-    <span>恭喜登录成功!${user.userName}</span>
+    <span>恭喜登录成功!${user.username}</span>
     <span><a href="/my/logOut">点击注销</a></span>
 </body>
 </html>

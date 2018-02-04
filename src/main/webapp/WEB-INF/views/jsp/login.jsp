@@ -157,7 +157,7 @@
     <form id="form1" action="/my/login" name="f" method="post">
         <div class="input_outer">
             <span class="u_user"></span>
-            <input name="userName" class="text" placeholder="<spring:message code="username"/>" style="color: #FFFFFF !important" type="text">
+            <input name="username" class="text" placeholder="<spring:message code="username"/>" style="color: #FFFFFF !important" type="text">
         </div>
         <div class="input_outer">
             <span class="us_uer"></span>

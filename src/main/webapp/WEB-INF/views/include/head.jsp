@@ -5,6 +5,7 @@
 <script src="/static/js/jquery/jquery-1.7.2.min.js"></script>
 <script src="/static/layui/layui.all.js"></script>
 <link href="/static/layui/css/layui.css">
+<link href="/static/js/style.css">
 
 
 

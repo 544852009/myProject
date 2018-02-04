@@ -1,18 +1,18 @@
 package com.modules.user.dao;
 
-import com.modules.user.entity.Userinfo;
 
-@MyBatisDao
-public interface UserinfoMapper {
+import com.modules.user.entity.UserInfo;
+
+public interface UserInfoMapper {
     int deleteByPrimaryKey(Integer id);
 
-    int insert(Userinfo record);
+    int insert(UserInfo record);
 
-    int insertSelective(Userinfo record);
+    int insertSelective(UserInfo record);
 
-    Userinfo selectByPrimaryKey(Integer id);
+    UserInfo selectByPrimaryKey(Integer id);
 
-    int updateByPrimaryKeySelective(Userinfo record);
+    int updateByPrimaryKeySelective(UserInfo record);
 
-    int updateByPrimaryKey(Userinfo record);
+    int updateByPrimaryKey(UserInfo record);
 }
